@@ -3,6 +3,14 @@
 <head>
     <?php echo $head_contents ?>
     <meta charset="utf-8">
+    <?php
+    /* Social profiles*/
+    $twitterurl = config('social.twitter');
+    $facebookurl = config('social.facebook');
+    $googleurl = config('social.google');
+    $tumblrurl = config('social.tumblr');
+    
+    ?>
     <title>Suche - <?php echo blog_title() ?></title>
     <?php if (publisher()):?><link href="<?php echo publisher() ?>" rel="publisher" /><?php endif;?>
     <link rel="stylesheet" href="<?php echo site_url() ?>themes/sideblog/css/style.css" />
@@ -22,12 +30,12 @@
 	            <?php echo content()?>
 	    </div>
 	    <div class="footerbar">
-		    <div class="social">
-				<h3>Follow</h3>
-				<?php echo social() ?>
-			</div>
+		    <?php include("themes/sideblog/include/socialbar.php"); ?>
 			<div class="archive">
 					<?php echo archive_list()?>
+			</div>
+			<div>
+				
 			</div>
 	    </div>
 		
