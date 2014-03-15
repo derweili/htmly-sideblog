@@ -3,7 +3,7 @@
     <div class="post" itemprop="blogPost" itemscope="itemscope" itemtype="http://schema.org/BlogPosting">
     	<div class="main">
 			<h1 class="title-post" itemprop="name"><?php echo $p->title ?></h1> <!-- Post Titel Ausgeben -->
-			<div class="date">
+			<div class="metabar">
 				<span itemprop="datePublished"><a href="<?php echo $p->archive ?>" title="Show all posts made on this day"><?php echo date('d F Y', $p->date)?></a></span> <!-- Datum und Uhrzeit -->
 				- Veröffentlicht in <span itemprop="articleSection"><?php echo $p->tag ?></span> <!-- Tags -->
 				by <span itemprop="author"><a href="<?php echo $p->authorurl ?>"><?php echo $p->author ?></a></span> - <!-- Autor -->
@@ -23,6 +23,14 @@
 					<a class="googleplus"  href="https://plus.google.com/share?url=<?php echo $p->url ?>"><i class="fa fa-google-plus-square"></i>Google+</a>
 				</div>
 		</div>
+		<div class="postnav"> <!-- Nächste Beiträge -->
+			<?php if (!empty($next)):?>
+				<span><a href="<?php echo ($next['url']);?>" class="pagination-arrow newer" rel="next"><?php echo ($next['title']);?></a></span>
+			<?php endif;?>
+			<?php if (!empty($prev)):?>
+				<span><a href="<?php echo ($prev['url']); ?>" class="pagination-arrow older" rel="prev"><?php echo ($prev['title']); ?></a></span>
+			<?php endif;?>
+		</div>
 		<?php echo get_related($p->tag)?>
 		<div id="comments" class="comments border">
 			<?php if (facebook()):?>
@@ -32,14 +40,7 @@
 				<div id="disqus_thread"></div>
 			<?php endif;?>
 		</div>
-		<div class="postnav"> <!-- Nächste Beiträge -->
-			<?php if (!empty($next)):?>
-				<span><a href="<?php echo ($next['url']);?>" class="pagination-arrow newer" rel="next">Nächster Beitrag</a></span>
-			<?php endif;?>
-			<?php if (!empty($prev)):?>
-				<span><a href="<?php echo ($prev['url']); ?>" class="pagination-arrow older" rel="prev">Vorheriger Beitrag</a></span>
-			<?php endif;?>
-		</div>
+
     <?php if (disqus()):?>
    		 <?php echo disqus($p->title, $p->url) ?>
     <?php endif;?>

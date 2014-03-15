@@ -2,25 +2,25 @@
 				<h3>Follow</h3>
 				<?php if(!empty($twitterurl)) { ?>
 				<a class="" target="_blank" href="<?php echo $twitterurl;?>">
-					<img width="20" height="20" alt="Twitter" src="<?php echo site_url() ?>themes/sideblog/img/twitter.png">
+					<i class="fa fa-twitter-square"></i>
 				</a>
 				<?php }; ?>
 				<?php if(!empty($facebookurl)) { ?>
 				<a target="_blank" href="<?php echo $facebookurl?>">
-					<img width="20" height="20" alt="Facebook" src="<?php echo site_url() ?>themes/sideblog/img/facebook.png">
+					<i class="fa fa-facebook-square"></i>
 				</a>
 				<?php }; ?>
 				<?php if(!empty($googleurl)) { ?>
 				<a class="" target="_blank" href="<?php echo $googleurl;?>">
-					<img width="20" height="20" alt="Google" src="<?php echo site_url() ?>themes/sideblog/img/google.png">
+					<i class="fa fa-google-plus-square"></i>
 				</a>
 				<?php }; ?>
 				<?php if(!empty($tumblrurl)) { ?>
 				<a target="_blank" href="<?php echo $tumblrurl?>">
-					<img width="20" height="20" alt="Tumblr" src="<?php echo site_url() ?>themes/sideblog/img/tumblr.png">
+					<i class="fa fa-tumblr-square"></i>
 				</a>
 				<?php }; ?>
 				<a target="_blank" href="<?php echo site_url() ?>feed/rss">
-					<img width="20" height="20" alt="RSS Feed" src="<?php echo site_url() ?>themes/sideblog/img/rss.png">
+					<i class="fa fa-rss-square"></i>
 				</a>
 </div>

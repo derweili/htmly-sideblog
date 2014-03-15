@@ -16,14 +16,14 @@
     <div class="<?php echo $class ?>" itemprop="blogPost" itemscope="itemscope" itemtype="http://schema.org/BlogPosting">
     	<div class="main">
 			<h2 class="title-index" itemprop="name"><a href="<?php echo $p->url?>"><?php echo $p->title ?></a></h2>
-			<div class="date">
-				<span itemprop="datePublished"><?php echo date('d F Y', $p->date)?></span> - Posted in
-				<span itemprop="articleSection"><?php echo $p->tag ?></span> by
-				<span itemprop="author"><a href="<?php echo $p->authorurl ?>"><?php echo $p->author ?></a></span>
+			<div class="metabar">
+				<span class="date" itemprop="datePublished"><?php echo date('d F Y', $p->date)?></span> - Posted in
+				<span class="tags" itemprop="articleSection"><?php echo $p->tag ?></span> by
+				<span class="Autor" itemprop="author"><a href="<?php echo $p->authorurl ?>"><?php echo $p->author ?></a></span>
 				<?php
-					if (disqus_count()) {?> - <span><a href="<?php echo $p->url?>#disqus_thread">Comments</a></span>
-					<?php } elseif (facebook()){ ?> -
-					<a href="<?php echo $p->url ?>#comments"><span><fb:comments-count href=<?php echo $p->url ?>></fb:comments-count> Comments</span></a>
+					if (disqus_count()) {?><span class="comment"> - <a href="<?php echo $p->url?>#disqus_thread">Comments</a></span>
+					<?php } elseif (facebook()){ ?>
+					<a href="<?php echo $p->url ?>#comments"><span><fb:comments-count href=<?php echo $p->url ?>></fb:comments-count> - Comments</span></a>
 					<?php } ?>
 			</div>
 			<div class="teaser-body" itemprop="articleBody">
